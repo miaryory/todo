@@ -1,0 +1,59 @@
+body {
+    background-image: url(back.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+main {
+    margin-top: 3em;
+}
+
+.to-do-list,
+.done-list {
+    width: 100%;
+    transition: 0.3s;
+}
+
+.done-list {
+    background-color: rgb(204, 177, 177);
+    color: white;
+}
+
+.to-do-list {
+    background-color: white;
+}
+
+.task {
+    border-bottom: 1px solid black;
+    padding: 1em;
+}
+
+.task img[data-action="delete"] {
+    max-width: 20px;
+}
+
+/*MEDIUM SCREEN VIEW*/
+@media all and (min-width: 501px) and (max-width:800px) {
+
+    .to-do-list,
+    .done-list {
+        width: 70%;
+        margin: auto;
+    }
+}
+
+
+/*LARGE SCREEN VIEW*/
+@media all and (min-width: 801px) {
+    main {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .to-do-list,
+    .done-list {
+        width: 40%;
+    }
+}
