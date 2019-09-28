@@ -16,14 +16,31 @@
             <img src="xwhite.png" alt="Delete" data-action="delete">
             <h1 class="title"></h1>
             <p class="description"></p>
-            <button data-action="edit">Edit</button>
-            <button class="done">Done</button>
+            <button data-action="done" class="done">Done</button>
+            <p data-action="edit">| Edit</p>
         </article>
     </template>
 
     <main>
         <div class="to-do-list">
             <h1>To-Do</h1>
+            <form class="add-task">
+                <p data-action="add">+ new task</p>
+
+                <div class="add-form">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" required />
+
+                    <div>
+                        <label for="desc">Description</label>
+                        <textarea id="desc" name="desc" rows="5" cols="20">
+                                </textarea>
+                    </div>
+
+                    <input name="submit" class="submit" type="submit" value="Add">
+                </div>
+
+            </form>
         </div>
         <div class="done-list">
             <h1>Done</h1>

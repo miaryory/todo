@@ -1,59 +1,105 @@
 body {
-    background-image: url(back.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  background-image: url(back.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 main {
-    margin-top: 3em;
+  margin-top: 3em;
 }
 
 .to-do-list,
 .done-list {
-    width: 100%;
-    transition: 0.3s;
-}
-
-.done-list {
-    background-color: rgb(204, 177, 177);
-    color: white;
-}
-
-.to-do-list {
-    background-color: white;
+  width: 100%;
+  transition: 0.3s;
 }
 
 .task {
-    border-bottom: 1px solid black;
-    padding: 1em;
+  max-height: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+.done-list .task {
+  background-color: rgb(196, 171, 171);
+  color: white;
+  padding: 1em;
+}
+
+.done-list .task button,
+.done-list .task p[data-action="edit"] {
+  display: none;
+}
+
+/* .to-do-list {
+  background-color: white;
+} */
+
+.to-do-list .task {
+  padding: 1em;
+  background-color: white;
+  margin-bottom: 1em;
+}
+
+/* .task:not(:last-child) {
+} */
+
 .task img[data-action="delete"] {
-    max-width: 20px;
+  max-width: 25px;
+  float: right;
+}
+
+.task p[data-action="edit"] {
+  display: inline;
+  margin-left: 5px;
+}
+
+.task button[data-action="done"] {
+  width: 30%;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid rgb(206, 205, 205);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.295);
+  background-color: white;
+}
+
+form.add-task p[data-action="add"] {
+  padding: 1em;
+}
+
+form.add-task {
+  background-color: white;
+  margin-bottom: 1em;
+}
+
+form.add-task .add-form {
+  padding: 1em;
+}
+
+.hide {
+  display: none;
 }
 
 /*MEDIUM SCREEN VIEW*/
-@media all and (min-width: 501px) and (max-width:800px) {
-
-    .to-do-list,
-    .done-list {
-        width: 70%;
-        margin: auto;
-    }
+@media all and (min-width: 501px) and (max-width: 800px) {
+  .to-do-list,
+  .done-list {
+    width: 70%;
+    margin: auto;
+  }
 }
-
 
 /*LARGE SCREEN VIEW*/
 @media all and (min-width: 801px) {
-    main {
-        width: 90%;
-        margin: auto;
-        display: flex;
-        justify-content: space-evenly;
-    }
+  main {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+  }
 
-    .to-do-list,
-    .done-list {
-        width: 40%;
-    }
+  .to-do-list,
+  .done-list {
+    width: 40%;
+  }
 }
