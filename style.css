@@ -8,6 +8,19 @@ main {
   margin-top: 3em;
 }
 
+.task img[data-action="delete"],
+.task button[data-action="done"],
+.task p[data-action="edit"],
+form.add-task p[data-action="add"] {
+  cursor: pointer;
+}
+
+.task button[data-action="done"]:hover,
+.task p[data-action="edit"]:hover {
+  color: red;
+  transition: 0.3s;
+}
+
 .to-do-list,
 .done-list {
   width: 100%;
@@ -15,7 +28,6 @@ main {
 }
 
 .task {
-  max-height: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -30,10 +42,6 @@ main {
 .done-list .task p[data-action="edit"] {
   display: none;
 }
-
-/* .to-do-list {
-  background-color: white;
-} */
 
 .to-do-list .task {
   padding: 1em;
@@ -78,6 +86,12 @@ form.add-task .add-form {
 
 .hide {
   display: none;
+}
+
+.task form.edit-task {
+  border-top: 1px solid black;
+  margin-top: 1em;
+  padding: 1em;
 }
 
 /*MEDIUM SCREEN VIEW*/

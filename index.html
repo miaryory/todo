@@ -18,6 +18,21 @@
             <p class="description"></p>
             <button data-action="done" class="done">Done</button>
             <p data-action="edit">| Edit</p>
+
+            <form class="edit-task">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" required />
+
+                <div>
+                    <label for="desc">Description</label>
+                    <textarea id="desc" name="desc" rows="5" cols="20">
+                                </textarea>
+                </div>
+                <!-- <input type="hidden" name="done-status" class="done-status"> -->
+
+                <input name="submit" class="submit" type="submit" value="Save">
+                </div>
+            </form>
         </article>
     </template>
 
