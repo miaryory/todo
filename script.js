@@ -40,13 +40,16 @@ function display(task) {
     });
 
     clone.querySelector(".task button[data-action=done]").addEventListener("click", function () {
-        //clone.querySelector(".task .done-status") == true;
         markAsDone(task._id);
     });
 
     clone.querySelector(".task form.edit-task").classList.add("hide");
     clone.querySelector(".task p[data-action=edit]").addEventListener("click", function () {
         editTask(task._id);
+    });
+
+    clone.querySelector(".task form.edit-task .cancel").addEventListener("click", function () {
+        document.querySelector(`.task[data-taskid="${task._id}"] form.edit-task`).classList.add("hide");
     });
 
     if (task.done == true) {
@@ -151,6 +154,7 @@ function put(id) {
         });
 
     formEdit.reset();
+    formEdit.classList.add("hide");
 }
 
 document.querySelector("form.add-task p[data-action=add]").addEventListener("click", function () {
@@ -180,7 +184,13 @@ form.addEventListener("submit", e => {
         .then(res => res.json())
         .then(data => {
             display(data);
+            document.querySelector("form.add-task .add-form").classList.add("hide");
         });
 
     form.reset();
+});
+
+form.querySelector(".cancel-add").addEventListener("click", function () {
+    form.reset();
+    document.querySelector("form.add-task .add-form").classList.add("hide");
 });

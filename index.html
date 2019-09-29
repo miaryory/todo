@@ -1,69 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>To-do list</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-
+  <body>
     <template>
-        <article class="task">
-            <img src="xwhite.png" alt="Delete" data-action="delete">
-            <h1 class="title"></h1>
-            <p class="description"></p>
-            <button data-action="done" class="done">Done</button>
-            <p data-action="edit">| Edit</p>
+      <article class="task">
+        <img src="xwhite.png" alt="Delete" data-action="delete" />
+        <h1 class="title"></h1>
+        <p class="description"></p>
+        <button data-action="done" class="done">Done</button>
+        <p data-action="edit">| Edit</p>
 
-            <form class="edit-task">
-                <label for="title">Title</label>
-                <input type="text" name="title" id="title" required />
+        <form class="edit-task">
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title" required />
 
-                <div>
-                    <label for="desc">Description</label>
-                    <textarea id="desc" name="desc" rows="5" cols="20">
-                                </textarea>
-                </div>
-                <!-- <input type="hidden" name="done-status" class="done-status"> -->
+          <div>
+            <label for="desc">Description</label>
+          </div>
+          <textarea id="desc" name="desc" rows="5" cols="20"> </textarea>
 
-                <input name="submit" class="submit" type="submit" value="Save">
-                </div>
-            </form>
-        </article>
+          <div class="add-btn">
+            <input name="cancel" class="cancel" type="button" value="Cancel" />
+            <input name="submit" class="submit" type="submit" value="Save" />
+          </div>
+        </form>
+      </article>
     </template>
 
     <main>
-        <div class="to-do-list">
-            <h1>To-Do</h1>
-            <form class="add-task">
-                <p data-action="add">+ new task</p>
+      <div class="to-do-list">
+        <h1>To-Do</h1>
+        <form class="add-task">
+          <p data-action="add">+ new task</p>
 
-                <div class="add-form">
-                    <label for="title">Title</label>
-                    <input type="text" name="title" id="title" required />
+          <div class="add-form">
+            <div><label for="title">Title</label></div>
 
-                    <div>
-                        <label for="desc">Description</label>
-                        <textarea id="desc" name="desc" rows="5" cols="20">
-                                </textarea>
-                    </div>
+            <input type="text" name="title" id="title" required />
 
-                    <input name="submit" class="submit" type="submit" value="Add">
-                </div>
+            <div>
+              <label for="desc">Description</label>
+            </div>
+            <textarea id="desc" name="desc" rows="5" cols="20"> </textarea>
 
-            </form>
-        </div>
-        <div class="done-list">
-            <h1>Done</h1>
-        </div>
+            <div class="add-btn">
+              <input name="cancel" class="cancel-add" type="button" value="Cancel" />
+              <input name="submit" class="submit" type="submit" value="Add" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="done-list">
+        <h1>Done</h1>
+      </div>
     </main>
 
     <script src="script.js"></script>
-
-</body>
-
+  </body>
 </html>
